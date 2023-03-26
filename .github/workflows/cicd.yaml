@@ -17,8 +17,8 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ github.netavek }}
+          password: ${{ secrets.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 }}
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v2
         with:
