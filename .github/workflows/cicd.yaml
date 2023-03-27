@@ -1,13 +1,11 @@
-# job build image and push to ghcr.io
-name: Build and Push Docker Image
+# cicd job build docker image and push to ghcr.io
+name: cicd
 
 on:
   push:
-    branches:
-      - master
+    branches: [ main ]
   pull_request:
-    branches:
-      - master
+    branches: [ main ]
 
 jobs:
 
@@ -25,7 +23,7 @@ jobs:
           registry: ghcr.io
           username: netavek
           password: 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
-      - name: Build and Push Docker Image
+      - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
         with:
